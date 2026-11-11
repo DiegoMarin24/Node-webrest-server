@@ -26,6 +26,8 @@ export class Server{
     async start(){
 
         //* middelwares
+        this.app.use( express.json() ); 
+        this.app.use( express.urlencoded({extended: true}) ); 
 
         //* public floder
         this.app.use( express.static( this.publicPath));
